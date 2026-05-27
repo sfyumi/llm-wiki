@@ -1,0 +1,9 @@
+.claude/
+.DS_Store
+*.swp
+*.swo
+*~
+site/
+__pycache__/
+*.pyc
+.python-version
