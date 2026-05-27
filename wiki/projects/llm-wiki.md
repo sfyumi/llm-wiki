@@ -1,16 +1,16 @@
 ---
-title: obs-wiki — 本知识库
+title: llm-wiki — 本知识库
 tags: [元项目, 知识管理, LLM]
 status: active
 created: 2026-05-25
 updated: 2026-05-27
-repo: ""
+repo: https://github.com/sfyumi/llm-wiki
 sources: [raw/notes/karpathy-llm-wiki.md]
 ---
 
 ## 概述
 
-obs-wiki 是这个仓库本身。它既是工具（你正在用的知识管理系统），也是 [[concepts/llm-wiki-pattern]] 的最小可运行示范。
+llm-wiki 是这个仓库本身。它既是工具（你正在用的知识管理系统），也是 [[concepts/llm-wiki-pattern]] 的最小可运行示范。
 
 设计意图：
 - **raw → wiki → journal 三层**：原始素材不可变 → LLM 编译的知识层可累积修订 → 变更日志追溯审计

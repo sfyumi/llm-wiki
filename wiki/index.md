@@ -25,7 +25,7 @@
 
 ## 示例项目
 
-- [[projects/obs-wiki]] — 本知识库本身（元项目页）
+- [[projects/llm-wiki]] — 本知识库本身（元项目页）
 
 ## 最近更新
 
