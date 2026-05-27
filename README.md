@@ -1,14 +1,14 @@
 # obs — 个人知识库模板
 
-基于 [Andrej Karpathy 提出的 LLM Wiki 模式](https://x.com/karpathy)的个人知识管理仓库模板。Claude（或其他 Coding Agent）负责机械维护——抓取、整理、加交叉引用、记账；人类只做判断——审核、决定采纳、提供素材。
+基于 [Andrej Karpathy 提出的 LLM Wiki 模式](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f)的个人知识管理仓库模板。Claude（或其他 Coding Agent）负责机械维护——抓取、整理、加交叉引用、做 bookkeeping；人类只做判断——审核、决定采纳、提供素材。
 
-> "维护知识库最繁琐的部分不是阅读或思考——而是记账。" LLM 擅长的正是这件事。
+> "The tedious part of maintaining a knowledge base is not the reading or the thinking — it's the **bookkeeping**." LLM 擅长的正是这件事。
 
 ## 这套方法解决什么问题
 
-普通笔记软件的问题是**记账成本太高**：你看完一篇文章，想把要点提取出来 + 链接到三个月前看过的相关概念 + 更新主索引 + 写一条变更记录——这些都是机械工作，但加起来比读原文还累。于是大多数人最终就停在"剪藏"层，知识无法沉淀。
+普通笔记软件的问题是 **bookkeeping 成本太高**：你看完一篇文章，想把要点提取出来 + 链接到三个月前看过的相关概念 + 更新主索引 + 写一条变更记录——这些都是机械工作，但加起来比读原文还累。于是大多数人最终就停在"剪藏"层，知识无法沉淀。
 
-LLM Wiki 把这件事翻转：**人提供素材和判断，LLM 做所有记账工作**。你把一篇文章粘进会话，agent 自动：
+LLM Wiki 把这件事翻转：**人提供素材和判断，LLM 做所有 bookkeeping**。你把一篇文章粘进会话，agent 自动：
 
 1. 落到 `raw/notes/` 作为不可变原始素材
 2. 提炼关键论点，扫描已有 `wiki/concepts/` 找连接点

@@ -29,6 +29,6 @@
 
 ## 最近更新
 
-- 2026-05-27: 摄取 Karpathy LLM Wiki 视频：用 LLM 维护一个 Markdown wiki 比传统 RAG 更适合个人知识积累，因为"维护知识库最繁琐的部分不是阅读或思考——而是记账"
+- 2026-05-27: 摄取 Karpathy LLM Wiki gist：用 LLM 维护 Markdown wiki 比传统 RAG 更适合个人知识积累，因为知识库的瓶颈不是阅读或思考，而是 bookkeeping
 - 2026-05-27: 摄取 Karri Saarinen《Some Notes on AI》：把 Gell-Mann Amnesia + Dunning-Kruger 合流命名为 expertise paradox，给出 2026 AI 市场叙事撕裂的认知机制解释
 - 2026-05-25: 摄取 Shannon 1952 创造性思维讲座：6 个策略 + 3 个前提（训练/智力/动机），动机是把 Einstein 和普通人分开的决定性变量

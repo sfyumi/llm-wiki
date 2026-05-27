@@ -14,7 +14,7 @@ sources: [raw/notes/karpathy-llm-wiki.md, raw/notes/huxuan-vibe-coding-games-202
 
 - 三层架构：Raw Sources（不可变原始素材）→ Wiki（LLM 维护的 Markdown）→ Schema（规则配置）
 - 三个操作：Ingest（摄取）、Query（查询）、Lint（审查）
-- 核心洞察："维护知识库最繁琐的部分不是阅读或思考——而是记账。" LLM 擅长的正是这种机械性维护工作
+- 核心洞察："The tedious part of maintaining a knowledge base is not the reading or the thinking — it's the **bookkeeping**." LLM 擅长的正是这种机械性维护工作
 - 知识具有复利效应：每次摄取都在已有知识上叠加，而非重新发现
 - 甜蜜区在 50-200 条目，超过 200 条目后需要更复杂的工程（分层记忆、冲突检测）
 
