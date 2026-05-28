@@ -1,6 +1,6 @@
 # obs — 个人知识库模板
 
-基于 [Andrej Karpathy 提出的 LLM Wiki 模式](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f)的个人知识管理仓库模板。Claude（或其他 Coding Agent）负责机械维护——抓取、整理、加交叉引用、做 bookkeeping；人类只做判断——审核、决定采纳、提供素材。
+基于 [Andrej Karpathy 提出的 LLM Wiki 模式](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f)的个人知识管理仓库模板。Coding agent（Claude Code / Codex CLI / Cursor / Cline / aider 等）负责机械维护——抓取、整理、加交叉引用、做 bookkeeping；人类只做判断——审核、决定采纳、提供素材。
 
 > "The tedious part of maintaining a knowledge base is not the reading or the thinking — it's the **bookkeeping**." LLM 擅长的正是这件事。
 
@@ -32,7 +32,8 @@ wiki/            编译后的知识层（agent 维护）
   journal/       变更日志（每次 ingest 一条）
 templates/       页面模板（concept / project / report）
 scripts/         lint.py 检健康、build.py 生成静态站
-CLAUDE.md        ⭐ 给 LLM 看的完整 schema 与操作规则
+AGENTS.md        ⭐ 给 agent 看的完整 schema 与操作规则（agents.md 跨 agent 规范）
+CLAUDE.md        指向 AGENTS.md 的转发文件（兼容只识别 CLAUDE.md 的旧版本 Claude Code）
 ```
 
 ## 快速开始
@@ -41,18 +42,34 @@ CLAUDE.md        ⭐ 给 LLM 看的完整 schema 与操作规则
 # 1. fork 或 clone 本仓库
 git clone <your-fork> my-wiki && cd my-wiki
 
-# 2. 清空示范内容（保留 templates / scripts / CLAUDE.md）
+# 2. 清空示范内容（保留 templates / scripts / AGENTS.md / CLAUDE.md）
 rm wiki/concepts/*.md wiki/projects/*.md wiki/journal/*.md
 echo "# 知识库索引" > wiki/index.md
 
-# 3. 编辑 CLAUDE.md 适配你的偏好（标签体系、tone、术语对齐等）
+# 3. 编辑 AGENTS.md 适配你的偏好（标签体系、tone、术语对齐等）
 
-# 4. 在仓库根启动 Claude Code（或任何能读写文件的 Coding Agent）
-#    然后说：「摄取这篇文章：<URL>」「摄取这段对话：<粘贴正文>」
+# 4. 在仓库根启动你的 coding agent，然后说：
+#    「摄取这篇文章：<URL>」「摄取这段对话：<粘贴正文>」
 
 # 5. lint 检查健康度
 python scripts/lint.py
 ```
+
+## 跨 agent 支持
+
+仓库根的 `AGENTS.md` 是规范本体，遵循 [agents.md](https://agents.md) 跨 agent 约定。常见 agent 的识别情况：
+
+| Agent | 默认识别的规范文件 | 本仓库适配方式 |
+|---|---|---|
+| Claude Code | `CLAUDE.md` + `AGENTS.md` | `CLAUDE.md` 是 1 行 stub 转发到 `AGENTS.md`，两边都生效 |
+| Codex CLI | `AGENTS.md` | 原生支持 |
+| Cursor | `.cursorrules` / `.cursor/rules/` | 可加一个 1 行 stub：`See AGENTS.md` |
+| Cline | `.clinerules` | 同上 |
+| aider | `CONVENTIONS.md`（需在 `.aider.conf.yml` 指定） | 可加 stub 或直接 `read: AGENTS.md` |
+
+规范本体只放一份（`AGENTS.md`）避免漂移，其他 agent 的入口文件用一行 stub 转发即可。
+
+`scripts/dream-prompt.md` 里出现的 `Read` / `Grep` / `Edit` / `WebFetch` / `CronCreate` 等是 Claude Code 的工具命名，其他 agent 用等价能力（读文件 / grep / 行替换 / 网页抓取 / 定时任务）即可——dream-prompt 开头有说明。
 
 ## 示范内容
 
@@ -62,7 +79,7 @@ python scripts/lint.py
 
 ## 设计原则
 
-仓库的 schema 设计假设和取舍写在 [`CLAUDE.md`](CLAUDE.md) 里，包括：
+仓库的 schema 设计假设和取舍写在 [`AGENTS.md`](AGENTS.md) 里，包括：
 
 - **每次 ingest 必影响 3-10 个页面**——孤立创建一个新页面是失败信号
 - **index 是导航不是规范层级**——同一概念可以在多处分类下出现

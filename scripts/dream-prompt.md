@@ -1,4 +1,6 @@
-# Dream Task — obs 知识库周期性整合
+# Dream Task — 知识库周期性整合
+
+> **工具名约定**：本文档中提到的 `Read` / `Grep` / `Glob` / `Edit` / `WebSearch` / `WebFetch` / `CronCreate` / `ToolSearch` 是 Claude Code 的内置工具命名。其他 agent（Codex CLI / Cursor / Cline / aider 等）使用等价能力即可——名字不同但语义同源（读文件 / 模糊搜文件 / 文件名匹配 / 行替换 / 网页搜索 / 网页抓取 / 定时任务 / 工具发现）。把这份 prompt 喂给任何 reasoning-capable agent 都应该能跑完。
 
 你正在本知识库仓库根目录执行一次 "dream" 任务。目的是为知识库生成一份**分诊队列**，让用户审阅、决定是否采纳，**不要直接改正式 wiki 页面**。
 
