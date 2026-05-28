@@ -1,6 +1,6 @@
 # 个人知识库 — Schema
 
-这是一个基于 LLM Wiki 模式的个人知识管理系统。所有知识以 Markdown 文件形式存储，Coding agent（Claude Code / Codex CLI / Cursor / Cline / aider 等）负责自动化维护，人类负责审核确认。
+这是一个基于 LLM Wiki 模式的个人知识管理系统。所有知识以 Markdown 文件形式存储，Agent（Claude Code / Codex CLI / Cursor / Cline / aider 等）负责自动化维护，人类负责审核确认。
 
 本文件遵循 [agents.md](https://agents.md) 跨 agent 规范，主流 agent 启动时会自动读取。
 

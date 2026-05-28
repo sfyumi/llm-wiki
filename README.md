@@ -1,6 +1,6 @@
 # obs — 个人知识库模板
 
-基于 [Andrej Karpathy 提出的 LLM Wiki 模式](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f)的个人知识管理仓库模板。Coding agent（Claude Code / Codex CLI / Cursor / Cline / aider 等）负责机械维护——抓取、整理、加交叉引用、做 bookkeeping；人类只做判断——审核、决定采纳、提供素材。
+基于 [Andrej Karpathy 提出的 LLM Wiki 模式](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f)的个人知识管理仓库模板。Agent（Claude Code / Codex CLI / Cursor / Cline / aider 等）负责机械维护——抓取、整理、加交叉引用、做 bookkeeping；人类只做判断——审核、决定采纳、提供素材。
 
 > "The tedious part of maintaining a knowledge base is not the reading or the thinking — it's the **bookkeeping**." LLM 擅长的正是这件事。
 
@@ -48,7 +48,7 @@ echo "# 知识库索引" > wiki/index.md
 
 # 3. 编辑 AGENTS.md 适配你的偏好（标签体系、tone、术语对齐等）
 
-# 4. 在仓库根启动你的 coding agent，然后说：
+# 4. 在仓库根启动你的 agent，然后说：
 #    「摄取这篇文章：<URL>」「摄取这段对话：<粘贴正文>」
 
 # 5. lint 检查健康度
